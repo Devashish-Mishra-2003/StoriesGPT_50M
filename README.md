@@ -1,5 +1,12 @@
 # StoriesGPT-50M  
-A 50M parameter GPT-style language model trained from scratch on 200M tokens using Distributed Data Parallel (2× T4 GPUs).
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
+![Parameters](https://img.shields.io/badge/Parameters-50M-orange)
+![Tokens Trained](https://img.shields.io/badge/Tokens-200M-success)
+![DDP](https://img.shields.io/badge/DDP-2xT4_GPU-green)
+![Mixed Precision](https://img.shields.io/badge/AMP-Enabled-brightgreen)
+![Model Weights](https://img.shields.io/badge/Weights-HuggingFace-yellow)
+A **50M** parameter GPT-style language model trained from **scratch on 200M tokens** using **Distributed Data Parallel** (2× T4 GPUs).
 
 ---
 
@@ -8,10 +15,10 @@ A 50M parameter GPT-style language model trained from scratch on 200M tokens usi
 StoriesGPT-50M is a transformer-based autoregressive language model trained from scratch on the TinyStories dataset.  
 The goal of this project was to:
 
-- Implement a modern GPT architecture from first principles  
-- Train efficiently using Distributed Data Parallel (DDP)  
-- Optimize throughput with mixed precision (AMP)  
-- Analyze convergence behavior over 200M tokens  
+- Implement a **modern GPT architecture** from first principles  
+- Train efficiently using **Distributed Data Parallel (DDP)**  
+- Optimize throughput with **mixed precision (AMP)**  
+- Analyze convergence behavior over **200M tokens**  
 
 This project demonstrates end-to-end LLM engineering, not just fine-tuning.
 
@@ -20,7 +27,7 @@ This project demonstrates end-to-end LLM engineering, not just fine-tuning.
 ## Model Weights
 
 Due to GitHub file size limitations, trained weights are hosted on HuggingFace:
-https://huggingface.co/yourusername/StoriesGPT-50M
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-yellow?logo=huggingface)](https://huggingface.co/devashishmishr/StoriesGPT-50M)
 
 ---
 
@@ -28,13 +35,13 @@ https://huggingface.co/yourusername/StoriesGPT-50M
 
 - Parameters: ~50M  
 - Context Length: 512  
-- Vocabulary Size: 16,000 (ByteLevel BPE)  
+- Vocabulary Size: **16,000 (ByteLevel BPE)**  
 - Architecture:
   - Multi-Head Self Attention
   - Pre-LayerNorm Transformer Blocks
   - GELU Feedforward
   - Residual Connections
-- Optimizer: AdamW
+- Optimizer: **AdamW**
 - Precision: Mixed Precision (torch.cuda.amp)
 - Parallelism: DDP across 2× NVIDIA T4 GPUs
 
@@ -79,10 +86,10 @@ flowchart TD
 
 ## Training Setup
 
-- Dataset: TinyStories  
-- Tokens Trained: 200M  
+- Dataset: **TinyStories**  
+- Tokens Trained: **200M**  
 - Hardware: 2× NVIDIA T4 (Kaggle GPU environment)  
-- Throughput: ~24,000 tokens/sec  
+- Throughput: **~24,000 tokens/sec**  
 - Training Strategy:
   - Streaming dataset (no full in-memory load)
   - Resume-from-checkpoint support
@@ -96,7 +103,7 @@ flowchart TD
 
 ![Loss Curve](loss_curve.png)
 
-Training loss steadily decreased from ~5.0 to ~1.4 across 200M tokens, indicating stable convergence without divergence or instability.
+Training loss steadily decreased from **~5.0 to ~1.4** across 200M tokens, indicating stable convergence without divergence or instability.
 
 ---
 
@@ -104,7 +111,7 @@ Training loss steadily decreased from ~5.0 to ~1.4 across 200M tokens, indicatin
 
 ![Throughput](throughput_curve.png)
 
-Training throughput remained stable at ~24k tokens/sec using DDP and mixed precision.
+Training throughput remained stable at **~24k tokens/sec** using DDP and mixed precision.
 
 ---
 
@@ -139,9 +146,9 @@ python generate.py
 ---
 
 ## Project Structure
-``bash
+
+```bash
 StoriesGPT_50M/
-│
 ├── model.py
 ├── config.py
 ├── train.py
@@ -152,7 +159,6 @@ StoriesGPT_50M/
 ├── throughput_curve.png
 └── README.md
 ```
-
 ---
 
 ## What This Project Demonstrates
@@ -168,14 +174,14 @@ StoriesGPT_50M/
 
 ## Future Improvements
 
-- Scaling to 100M+ parameters
-- Training on 1B+ tokens
-- Adding Rotary Positional Embeddings (RoPE)
+- Scaling to **100M+ parameters**
+- Training on **1B+ tokens**
+- Adding **Rotary Positional Embeddings (RoPE)**
 - Flash Attention integration
 - Fine-tuning for conversational alignment
 
 ---
 
 ## Author
-Devashish Mishra
-B.Tech (AI/ML)
+- Devashish Mishra
+- B.Tech (AI/ML)
