@@ -151,7 +151,7 @@ StoriesGPT_50M/
 ├── loss_curve.png
 ├── throughput_curve.png
 └── README.md
-``
+```
 
 ---
 
