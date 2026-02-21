@@ -6,6 +6,7 @@
 ![DDP](https://img.shields.io/badge/DDP-2xT4_GPU-green)
 ![Mixed Precision](https://img.shields.io/badge/AMP-Enabled-brightgreen)
 ![Model Weights](https://img.shields.io/badge/Weights-HuggingFace-yellow)
+
 A **50M** parameter GPT-style language model trained from **scratch on 200M tokens** using **Distributed Data Parallel** (2× T4 GPUs).
 
 ---
